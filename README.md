@@ -63,9 +63,42 @@ Bombing results
 
 Player elimination 
 
-#Commands used 
+# Commands used 
 
-REG 
+REG <name> <x> <y> <d> 
+
+where <name> is up to 20 characters
+
+(x, y): ship center coordinates
+
+<d>: - for horizontal (1×5), | for vertical (5×1)
+
+Server sends to Client:
+
+INVALID → bad syntax or invalid placement
+
+TAKEN → name already in use
+
+WELCOME → registration successful
+
+Broadcast: JOIN <name>
+
+Bombing
+Client → Server:
+
+BOMB <x> <y>
+
+Server Broadcasts:
+
+HIT <attacker> <x> <y> <victim> → if one or more ships are hit
+
+MISS <attacker> <x> <y> → if no ship is hit
+
+Game End / Disconnect
+Broadcast:
+
+GG <name>
+→ Sent when a player’s ship is destroyed or they disconnect.
 
 
 
