@@ -28,21 +28,42 @@ It uses sockets and epoll for handling multiple clients at once, allowing player
 
 1. Ensure all files are in same directory
 2. Compile using gcc
-'gcc -o battleship main.c helpers.c'
-3. Run program to start server by inputting a port number
-'./battleship <port>' (e.g. port==8710)
+`gcc -o battleship main.c helpers.c`
+
+4. Run program to start server by inputting a port number
+`./battleship <port>' (e.g. port==8710)`
 
 #Connecting to server
 
 Open a terminal to connect to the server
 
-'nc localhost 8080'
+`nc localhost 8080`
 
 #Game Instructions
 
-layers register with a name and place a single ship of length 5 on a 10×10 grid. Ships can be placed horizontally (-) or vertically (|). Players take turns bombing coordinates to try and sink each other’s ships.
+Board: Played on a 10×10 grid with coordinates from (0,0) to (9,9).
 
-#Commands
+Ships: Each player has a single ship, either horizontal (1×5) or vertical (5×1).
+
+Joining: Players can connect anytime by registering with a name and ship placement.
+
+Bombing: Any player can bomb any cell at any time.
+
+If a bomb hits one or more ships, the server announces the hit or else announces a miss.
+
+Damage: Each ship has 5 cells. Once all are damaged, that ship is sunk, and the player loses and is automatically disconnected.
+
+Leaving: Disconnecting is treated the same as losing.
+
+Broadcasts: The server announces all major events:
+
+New players joining
+
+Bombing results
+
+Player elimination 
+
+#Commands used 
 
 REG 
 
