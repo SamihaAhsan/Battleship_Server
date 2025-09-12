@@ -24,7 +24,7 @@ It uses sockets and epoll for handling multiple clients at once, allowing player
 
 - Linux/Unix environment
 
-# Starting up the Server
+# Starting up the Server ⭐
 
 1. Ensure all files are in same directory
 2. Compile using gcc
@@ -39,7 +39,7 @@ Open a terminal to connect to the server
 
 `nc localhost 8080`
 
-#Game Instructions
+# Game Instructions 🎮
 
 Board: Played on a 10×10 grid with coordinates from (0,0) to (9,9).
 
@@ -63,9 +63,9 @@ Bombing results
 
 Player elimination 
 
-# Commands used 
+# Commands used ⚙️
 
-REG <name> <x> <y> <d> 
+`REG` <name> <x> <y> <d> 
 
 where <name> is up to 20 characters
 
@@ -75,29 +75,29 @@ where <name> is up to 20 characters
 
 Server sends to Client:
 
-INVALID → bad syntax or invalid placement
+`INVALID` → bad syntax or invalid placement
 
-TAKEN → name already in use
+`TAKEN` → name already in use
 
-WELCOME → registration successful
+`WELCOME` → registration successful
 
 Broadcast: JOIN <name>
 
 Bombing
 Client → Server:
 
-BOMB <x> <y>
+`BOMB` <x> <y>
 
 Server Broadcasts:
 
-HIT <attacker> <x> <y> <victim> → if one or more ships are hit
+`HIT` <attacker> <x> <y> <victim> → if one or more ships are hit
 
-MISS <attacker> <x> <y> → if no ship is hit
+`MISS` <attacker> <x> <y> → if no ship is hit
 
 Game End / Disconnect
 Broadcast:
 
-GG <name>
+`GG` <name>
 → Sent when a player’s ship is destroyed or they disconnect.
 
 
