@@ -28,16 +28,16 @@ It uses sockets and epoll for handling multiple clients at once, allowing player
 
 1. Ensure all files are in same directory
 2. Compile using gcc
-`gcc -o battleship main.c helpers.c`
+```gcc -o battleship main.c helpers.c```
 
 4. Run program to start server by inputting a port number
-`./battleship <port>' (e.g. port==8710)`
+```./battleship <port>' (e.g. port==8710)```
 
 #Connecting to server
 
 Open a terminal to connect to the server
 
-`nc localhost 8080`
+```nc localhost 8080```
 
 # Game Instructions 🎮
 
